@@ -1,0 +1,3 @@
+service namespace "skillview" {
+	"SKILL_VIEW"."Z_PERSON" as "SkillReport" keys generate local "ID";
+}

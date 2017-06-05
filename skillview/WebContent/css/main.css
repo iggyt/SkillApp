@@ -1,0 +1,580 @@
+/* APPLICATION */
+
+#app {
+	width: 80% !important;
+	position: absolute;
+    margin: auto;
+    right: 0px;
+    left: 0px;
+}
+
+
+
+/* START VIEW */
+
+.startPage {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: -48px;
+    resize: vertical;
+    height: 100vh;
+}
+
+.startButton {
+    width: 200px;
+    height: 200px;
+    padding: 0px 2px 2px 5px;
+    margin: 20px;
+    font-size: 2.5em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    background-color: white;
+    border: 0px;
+	border-radius: 100%;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+    transition: all .3s;
+}
+
+.startButton:hover {
+    background-color: lightBlue;
+    border-radius: 0px;
+    font-weight: 900;
+    color: white;
+    cursor: pointer;
+    box-shadow: 5px 5px 25px rgba(0,0,0,0.5);
+}
+
+.profile:hover {
+	background: url('../img/profile.png') center;
+}
+
+.people:hover {
+	background: url('../img/people.png') center;
+}
+
+.skills:hover {
+	background: url('../img/skills.png') center;
+}
+
+.reporting:hover {
+	background: url('../img/reporting.png') center;
+}
+
+
+
+/* PROFILE VIEW */
+
+.photoProfile {
+	position: absolute;
+	right: 0px;
+	height: 91%;
+	z-index: 10;
+	transition: right .5s, top .5s;
+}
+
+.photoProfile:hover:after {
+    content: "Upload Photo";
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: black;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.userInfoProfile {
+	font-size: 1.2em;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 100;
+}
+
+.userNameProfile {
+	font-weight: 400;
+}
+
+.skillNameProfile {
+	font-size: 2em;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 100;
+}
+
+.proficiencyProfile {
+	padding-top: 7px;
+	padding-bottom: 6px;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-top: 4px;
+	margin-left: 10px;
+	border-bottom: beige solid 1px;
+	border-top: beige solid 1px;
+}
+
+.addSkillLabelProfile {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 100;
+	font-size: 1.15em;
+}
+
+
+
+/* SKILLS VIEW */
+
+.skillNameSkills {
+    font-size: 1.5em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    margin: 10px;
+    padding-left: 5px;
+}
+
+.needSkills {
+    font-size: 1.1em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    margin: 10px;
+    position: absolute;
+    right: 10px;
+    top: -45px;
+}
+
+
+
+
+/* PEOPLE VIEW */
+
+.namePeople {
+    font-size: 2em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    color: black;
+}
+
+.levelPeople {
+    font-size: 1.25em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    color: black;
+    position: absolute;
+    top: -3em;
+    right: 10px;
+}
+
+.locationPeople {
+	font-size: 1.15em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    color: black;
+}
+
+.domainPeople {
+	font-size: 1.15em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    color: black;
+}
+
+
+
+
+/* ONE SKILL VIEW */
+
+.nameHeaderOneSkill {
+	font-size: 3em;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 100;
+	text-align: center; 
+}
+
+.descriptionHeaderOneSkill {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+}
+
+.marketNeedOneSkill {
+	font-size: 0.7em;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 100;
+	color: gray;
+}
+
+.peopleNameSkill {
+    font-size: 2em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+}
+
+.additionalInfoOne {
+    font-size: 1.5em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+}
+
+
+/* GLOBAL */
+
+.hidden {
+    display: none;
+}
+
+
+
+
+
+/* MEDIA QUERIES */
+
+@media (max-width: 450px) {
+	
+	/* APPLICATION */
+
+	#app {
+		width: 100% !important;
+		position: absolute;
+	    margin: auto;
+	    right: 0px;
+	    left: 0px;
+	}
+	
+	/* START VIEW */
+	.startPage {
+	    flex-direction: column;
+	    justify-content: center;
+	    margin-top: -2em;
+	}
+	
+	.startButton {
+		width: 150px;
+		height: 150px;
+		padding: 0px 2px 2px 5px;
+		margin: 10px;
+		font-size: 2em;
+		font-family: 'Roboto', sans-serif;
+		font-weight: 100;
+		background-color: white;
+		border-radius: 100%;
+		box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+		transition: all .3s;
+	}
+
+	.startButton:hover {
+		background-color: lightBlue;
+		border-radius: 0px;
+		font-weight: 900;
+		color: white;
+		cursor: pointer;
+		box-shadow: 5px 5px 25px rgba(0,0,0,0.5);
+	}
+	
+	
+	/* PROFILE VIEW */
+
+	.photoProfile {
+		position: absolute;
+		top: 15px;
+		right: 15px;
+		height: 50%;
+		z-index: 10;
+		transition: right .5s, top .5s;
+	}
+
+	.userInfoProfile {
+		font-size: 1.1em;
+		font-family: 'Roboto', sans-serif;
+		font-weight: 100;
+	}
+
+	.userNameProfile {
+		font-weight: 400;
+	}
+
+	.skillNameProfile {
+		font-size: 1.25em;
+		font-family: 'Roboto', sans-serif;
+		font-weight: 100;
+	}
+	
+	.proficiencyProfile {
+		padding-top: 7px;
+		padding-bottom: 6px;
+		padding-left: 20px;
+		padding-right: 20px;
+		margin-top: 4px;
+		margin-left: 10px;
+		border-bottom: beige solid 1px;
+		border-top: beige solid 1px;
+	}
+	
+	/* PEOPLE VIEW */
+
+	.namePeople {
+	    font-size: 1.3em;
+	    font-family: 'Roboto', sans-serif;
+	    font-weight: 400;
+	    color: black;
+	}
+	
+	.levelPeople {
+	    font-size: 1.15em;
+	    font-family: 'Roboto', sans-serif;
+	    font-weight: 100;
+	    color: black;
+	    position: absolute;
+	    top: -1em;
+	    right: 10px;
+	}
+	
+	.locationPeople {
+		font-size: 1.05em;
+	    font-family: 'Roboto', sans-serif;
+	    font-weight: 100;
+	    color: black;
+	}
+	
+	.domainPeople {
+		font-size: 1.05em;
+	    font-family: 'Roboto', sans-serif;
+	    font-weight: 100;
+	    color: black;
+	}
+	
+	
+	/* ONE SKILL VIEW */
+
+	.nameHeaderOneSkill {
+		font-size: 1.5em;
+		font-family: 'Roboto', sans-serif;
+		font-weight: 100;
+		text-align: center; 
+	}
+	
+	.descriptionHeaderOneSkill {
+		font-family: 'Roboto', sans-serif;
+		font-weight: 400;
+	}
+	
+	.marketNeedOneSkill {
+		font-size: 0.7em;
+		font-family: 'Roboto', sans-serif;
+		font-weight: 100;
+		color: gray;
+	}
+	
+	.peopleNameSkill {
+	    font-size: 1.5em;
+	    font-family: 'Roboto', sans-serif;
+	    font-weight: 100;
+	}
+	
+	.additionalInfoOne {
+        font-size: 0.8em;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+    }
+}
+
+@media (min-width: 451px) and (max-width: 700px) {
+	/* APPLICATION */
+
+	#app {
+		width: 100% !important;
+		position: absolute;
+	    margin: auto;
+	    right: 0px;
+	    left: 0px;
+	}
+	
+	.skillNameProfile {
+		font-size: 4vmax;
+		font-weight: 100;
+	}
+
+	.photoProfile { 
+		position: absolute;
+		top: 15px;
+		right: 15px;
+		height: 60%;
+		z-index: 10;
+	}
+	
+	.namePeople {
+	    font-size: 5vw;
+	    font-family: 'Roboto', sans-serif;
+	    font-weight: 100;
+	    color: black;
+	}
+	
+	.levelPeople {
+		font-size: 5vw;
+	}
+
+
+	/* START VIEW */
+	.startButton {
+		width: 150px;
+		height: 150px;
+		padding: 0px 2px 2px 5px;
+		margin: 10px;
+		font-size: 2em;
+		font-family: 'Roboto', sans-serif;
+		font-weight: 100;
+		background-color: white;
+		border-radius: 100%;
+		box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+		transition: all .3s;
+	}
+
+	.startButton:hover {
+		background-color: lightBlue;
+		border-radius: 0px;
+		font-weight: 900;
+		color: white;
+		cursor: pointer;
+		box-shadow: 5px 5px 25px rgba(0,0,0,0.5);
+	}
+
+	
+	/* PROFILE VIEW */
+
+	.photoProfile {
+		position: absolute;
+		top: 15px;
+		right: 15px;
+		height: 50%;
+		z-index: 10;
+		transition: right .5s, top .5s;
+	}
+
+	.userInfoProfile {
+		font-size: 1.1em;
+		font-family: 'Roboto', sans-serif;
+		font-weight: 100;
+	}
+
+	.userNameProfile {
+		font-weight: 400;
+	}
+
+	.skillNameProfile {
+		font-size: 2em;
+		font-family: 'Roboto', sans-serif;
+		font-weight: 100;
+	}
+	
+	.proficiencyProfile {
+		padding-top: 7px;
+		padding-bottom: 6px;
+		padding-left: 20px;
+		padding-right: 20px;
+		margin-top: 4px;
+		margin-left: 10px;
+		border-bottom: beige solid 1px;
+		border-top: beige solid 1px;
+	}
+	
+	
+	/* PEOPLE VIEW */
+
+	.namePeople {
+	    font-size: 1.4em;
+	    font-family: 'Roboto', sans-serif;
+	    font-weight: 100;
+	    color: black;
+	}
+	
+	.levelPeople {
+	    font-size: 1.20em;
+	    font-family: 'Roboto', sans-serif;
+	    font-weight: 100;
+	    color: black;
+	    position: absolute;
+	    top: -1em;
+	    right: 10px;
+	}
+	
+	.locationPeople {
+		font-size: 1.10em;
+	    font-family: 'Roboto', sans-serif;
+	    font-weight: 100;
+	    color: black;
+	}
+	
+	.domainPeople {
+		font-size: 1.10em;
+	    font-family: 'Roboto', sans-serif;
+	    font-weight: 100;
+	    color: black;
+	}
+	
+	
+	/* ONE SKILL VIEW */
+
+	.nameHeaderOneSkill {
+		font-size: 2em;
+		font-family: 'Roboto', sans-serif;
+		font-weight: 100;
+		text-align: center; 
+	}
+	
+	.descriptionHeaderOneSkill {
+		font-family: 'Roboto', sans-serif;
+		font-weight: 400;
+	}
+	
+	.marketNeedOneSkill {
+		font-size: 0.9em;
+		font-family: 'Roboto', sans-serif;
+		font-weight: 100;
+		color: gray;
+	}
+	
+	.peopleNameSkill {
+	    font-size: 1.7em;
+	    font-family: 'Roboto', sans-serif;
+	    font-weight: 100;
+	}
+	
+	.additionalInfoOne {
+        font-size: 1em;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+    }
+}
+
+@media (min-width: 701px) and (max-width: 1000px) {
+	/* APPLICATION */
+
+	#app {
+		width: 100% !important;
+		position: absolute;
+	    margin: auto;
+	    right: 0px;
+	    left: 0px;
+	}
+	
+	.skillNameProfile {
+		font-size: 3vmax;
+		font-weight: 100;
+	}
+}
+
+@media (min-width: 1600px) {
+	/* APPLICATION */
+
+	#app {
+		width: 60% !important;
+		position: absolute;
+	    margin: auto;
+	    right: 0px;
+	    left: 0px;
+	}
+}
+
+@media print {
+    .photoProfile {
+        height: 145px;
+    }
+}

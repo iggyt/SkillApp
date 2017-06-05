@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+		<script src="/sap/ui5/1/resources/sap-ui-core.js"
+				id="sap-ui-bootstrap"
+				data-sap-ui-libs="sap.m,sap.ui.commons"
+				data-sap-ui-theme="sap_bluecrystal"
+				data-sap-ui-xx-bindingSyntax="complex">
+		</script>
+		<!-- only load the mobile lib "sap.m" and the "sap_bluecrystal" theme -->
+		<link href="css/main.css" rel="stylesheet" type="text/css" />
+		<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,700' rel='stylesheet' type='text/css'>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.full.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js"></script>
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2014-11-29/FileSaver.min.js"></script>
+		
+		<script src="js/exportToExcel.js"></script>
+
+		<script>
+			sap.ui.localResources("view");
+			sap.ui.localResources("controller");
+			sap.ui.localResources("css");
+			sap.ui.localResources("img");
+			sap.ui.localResources("model");
+			sap.ui.localResources("localService");
+			sap.ui.localResources("js");
+			var app = new sap.m.App({id:"app", initialPage:"idStartView", navigate: function(oEvent) {
+			    if (oEvent.getParameters().toId === "idOneSkillView") {
+			        oEvent.getParameters().to.getController().handleFacetFilterReset();
+			    }
+			}});
+			var pageStart = new sap.ui.view({id:"idStartView", viewName:"view.StartView", type:sap.ui.core.mvc.ViewType.XML});
+			var pageProfile = new sap.ui.view({id:"idProfileView", viewName:"view.ProfileView", type:sap.ui.core.mvc.ViewType.XML});
+			var pagePeople = new sap.ui.view({id:"idPeopleView", viewName:"view.PeopleView", type:sap.ui.core.mvc.ViewType.XML});
+			var pageSkills = new sap.ui.view({id:"idSkillsView", viewName:"view.SkillsView", type:sap.ui.core.mvc.ViewType.XML});
+			var pageOneSkill = new sap.ui.view({id:"idOneSkillView", viewName:"view.OneSkillView", type:sap.ui.core.mvc.ViewType.XML});
+			var pageReporting = new sap.ui.view({id:"idReportingView", viewName:"view.ReportingView", type:sap.ui.core.mvc.ViewType.XML});
+			app.addPage(pageStart).addPage(pageProfile).addPage(pagePeople).addPage(pageSkills).addPage(pageOneSkill).addPage(pageReporting);
+			app.placeAt("content");
+		</script>
+	</head>
+	<body class="sapUiBody" role="application">
+		<div id="content"></div>
+	</body>
+</html>

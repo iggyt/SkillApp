@@ -1,0 +1,8 @@
+service namespace "skillview" {
+	"SKILL_VIEW"."Z_PERSON" as "Person"; 
+	"SKILL_VIEW"."Z_SKILL" as "skill";
+	"SKILL_VIEW"."Z_PERSON_SKILL" as "personskill" navigates ("Z_PERSON" as "Person", "Z_SKILL" as "skill");	
+	
+	association "Z_SKILL" principal "personskill"("ID_SKILL") multiplicity "1" dependent "skill"("ID_SKILL") multiplicity "*";	
+	association "Z_PERSON" principal "personskill"("ID_PERSON") multiplicity "1" dependent "Person"("ID_PERSON") multiplicity "1";
+}  

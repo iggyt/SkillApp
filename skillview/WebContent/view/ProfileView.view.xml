@@ -1,0 +1,68 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:commons="sap.ui.commons" xmlns:com="sap.ui.commons.layout" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form"
+		controllerName="controller.ProfileView" xmlns:html="http://www.w3.org/1999/xhtml" >
+	<Page>
+		<customHeader>
+            <Bar>
+                <contentLeft>
+                    <Button id="idBackButton" icon="sap-icon://nav-back" press="goBack" tooltip="Back" />
+                    <Button id="idHomeButton" icon="sap-icon://home" press="goHome" tooltip="Home" />
+                </contentLeft>
+                <contentMiddle>
+                    <Label text="Profile" />
+                </contentMiddle>
+                <contentRight>
+                    <Button id="idPrintButton" icon="sap-icon://print" press="printView" tooltip="Print" />
+                    <Button id="idExportButton" icon="sap-icon://download" press="exportToExcel" tooltip="Export to Excel" />
+                </contentRight>
+            </Bar>
+		</customHeader>
+		<content>
+			<FlexBox justifyContent="Center" alignItems="Stretch" >
+				<items>	
+					<Panel width="auto" class="sapUiTinyMargin sapUiNoContentPadding">
+						<layoutData>
+							<FlexItemData growFactor="1" />
+						</layoutData>
+						<Image 
+                            id="idProfilePhoto" 
+                            densityAware="false"
+                            press="handlePhotoClick"
+                            class="photoProfile" />
+						<f:SimpleForm
+							class="sapUiTinyMargin sapUiNoContentPadding"
+							layout="ResponsiveGridLayout">
+                            <Text id="idUserId" class="userInfoProfile" />
+    						<Label text="Name" class="userInfoProfile" />
+    						<Text id="idProfileName" class="userInfoProfile userNameProfile" />
+    						<Label text="Surname" class="userInfoProfile" />
+    						<Text id="idProfileSurname" class="userInfoProfile userNameProfile" />
+    						<Label text="Level" class="userInfoProfile" />
+    						<Text id="idProfileLevel" class="userInfoProfile" />
+    						<Label text="Location" class="userInfoProfile" />
+    						<Text id="idProfileLocation" class="userInfoProfile" />
+						</f:SimpleForm>
+					</Panel>
+				</items>
+			</FlexBox>
+			<List
+				id="skillsList"
+				headerText="Skills"
+				delete="handleDeleteItem">
+				<headerToolbar>
+					<Toolbar>
+						<Label text="Skills"/>
+						<ToolbarSpacer />
+						<ToggleButton
+							id="idEditSkillButton"
+							icon="sap-icon://edit"
+							press="editSkills" />
+						<Button
+							id="idAddSkillButton"
+							icon="sap-icon://add"
+							press="addSkill" />
+					</Toolbar>
+				</headerToolbar>	
+			</List>
+		</content>
+	</Page>
+</mvc:View>

@@ -1,0 +1,58 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="controller.PeopleView" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page>
+    <customHeader>
+      <Bar>
+        <contentLeft>
+            <Button id="idBackButton" icon="sap-icon://nav-back" press="goBack" tooltip="Back" />
+            <Button id="idHomeButton" icon="sap-icon://home" press="goHome" tooltip="Home" />
+        </contentLeft>
+        <contentMiddle>
+            <Label text="People" />
+        </contentMiddle>
+        <contentRight>
+            <Button id="idSortButton" icon="sap-icon://sort" press="handleSort" tooltip="Sort" />
+            <Button id="idPrintButton" icon="sap-icon://print" press="printView" tooltip="Print" />
+            <Button id="idExportButton" icon="sap-icon://download" press="exportToExcel" tooltip="Export to Excel" />
+        </contentRight>
+      </Bar>
+    </customHeader>
+		<subHeader>
+			<Toolbar>
+				<SearchField
+                    placeholder="Type for search..."
+					liveChange="onSearch"
+					width="100%" />
+			</Toolbar>
+		</subHeader>
+		<content>
+			<List
+				id="idPeopleList"
+                items="{users>/Person}"
+                growing="true"
+                growingScrollToLoad="true" >	
+				<items>
+                    <CustomListItem>
+                        <HBox fitContainer="true">
+                            <Image
+                                width="100px"
+                                densityAware="false"
+                                press="pictureToProfile"
+                                src="{  path: 'users>ID_PERSON',
+                                        formatter: '.photoPath' }" />
+                            <VBox class="sapUiSmallMargin" fitContainer="true">
+                                <layoutData>
+                                    <FlexItemData growFactor="2" />
+                                </layoutData>
+                                <Link text="{users>NAME} {users>SURNAME}" class="namePeople" press="goToProfile" />
+                                <Label text="{users>DOMAIN}" class="domainPeople" />
+                                <Label text="{users>LOCATION}" class="locationPeople"/>
+                                <Label text="{users>LEVEL}" class="levelPeople" />
+                            </VBox>
+                        </HBox>
+                    </CustomListItem>
+				</items>
+			</List>
+		</content>
+	</Page>
+</mvc:View>

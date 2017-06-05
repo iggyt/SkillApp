@@ -1,0 +1,112 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+		controllerName="controller.SkillsView" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page>
+    <customHeader>
+      <Bar>
+        <contentLeft>
+            <Button id="idBackButton" icon="sap-icon://nav-back" press="goBack" tooltip="Back" />
+            <Button id="idHomeButton" icon="sap-icon://home" press="goHome" tooltip="Home" />
+        </contentLeft>
+        <contentMiddle>
+            <Label text="Skills" />
+        </contentMiddle>
+        <contentRight>
+            <Button id="idAddSkillButton" icon="sap-icon://add" tooltip="Add skill" press="testAddSkill"/>
+            <Button id="idPrintButton" icon="sap-icon://print" press="printView" tooltip="Print" />
+            <Button id="idExportButton" icon="sap-icon://download" press="exportToExcel" tooltip="Export to Excel" />
+        </contentRight>
+      </Bar>
+    </customHeader>
+		<subHeader>
+			<Toolbar>
+				<SearchField
+                    placeholder="Type to search..."
+					liveChange="onSearch"
+					width="100%" />
+			</Toolbar>
+		</subHeader>
+		<content>
+			<FacetFilter
+				type="Light"
+				showPersonalization="true"
+				showReset="true"
+				reset="handleFacetFilterReset" >
+  				<lists>
+  					<FacetFilterList
+  						title="NAME"
+  						multiSelect="true"
+  						listClose="handleListClose"
+  						items="{filter>/Name}" >
+  	 					<items>
+  	 						<FacetFilterItem text="{filter>text}" />  	 						
+  	 					</items>  			 					
+  					</FacetFilterList>
+  					<FacetFilterList
+  						title="NEED"
+  						multiSelect="true"
+  						listClose="handleListClose"
+  						items="{filter>/Need}" >
+  	 					<items>
+  	 						<FacetFilterItem text="{filter>text}" />  	 						
+  	 					</items>  			 					
+  					</FacetFilterList>
+  					<FacetFilterList
+  						title="COST"
+  						multiSelect="true"
+  						listClose="handleListClose"
+  						items="{filter>/Cost}" >
+  	 					<items>
+  	 						<FacetFilterItem text="{filter>text}" />  	 						
+  	 					</items>  			 					
+  					</FacetFilterList>
+  					<FacetFilterList
+  						title="SPECIALTY"
+  						multiSelect="true"
+  						listClose="handleListClose"
+  						items="{filter>/Specialty}" >
+  	 					<items>
+  	 						<FacetFilterItem text="{filter>text}" />  	 						
+  	 					</items>  			 					
+  					</FacetFilterList>
+  					<FacetFilterList
+  						title="DOMAIN"
+  						multiSelect="true"
+  						listClose="handleListClose"
+  						items="{filter>/Domain}" >
+  	 					<items>
+  	 						<FacetFilterItem text="{filter>text}" />  	 						
+  	 					</items>  			 					
+  					</FacetFilterList>
+  					<FacetFilterList
+  						title="PLATFORM"
+  						multiSelect="true"
+  						listClose="handleListClose"
+  						items="{filter>/Platform}" >
+  	 					<items>
+  	 						<FacetFilterItem text="{filter>text}" />  	 						
+  	 					</items>  			 					
+  					</FacetFilterList>   				
+  				</lists>		
+			</FacetFilter>
+			<List
+				id="idSkillsList"
+				items="{/Skills}"
+				growing="true"
+				growingScrollToLoad="true" >	
+				<items>
+                    <CustomListItem>
+                        <VBox>
+                            <Link
+                                text="{NAME}"
+                                class="skillNameSkills"
+                                press="goToSkill" />
+                            <Label
+                                text="{NEED}"
+                                class="needSkills" />
+                        </VBox>
+                    </CustomListItem>
+				</items>
+			</List>
+		</content>
+	</Page>
+</mvc:View>

@@ -1,0 +1,115 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		controllerName="controller.OneSkillView" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page>
+    <customHeader>
+      <Bar>
+        <contentLeft>
+          <Button id="idBackButton" icon="sap-icon://nav-back" press="goBack" tooltip="Back" />
+          <Button id="idHomeButton" icon="sap-icon://home" press="goHome" tooltip="Home" />
+        </contentLeft>
+        <contentMiddle>
+          <Label text="Skill" />
+        </contentMiddle>
+        <contentRight>
+          <Button id="idSortButton" icon="sap-icon://sort" press="handleSort" tooltip="Sort" />
+          <Button id="idPrintButton" icon="sap-icon://print" press="printView" tooltip="Print" />
+          <Button id="idExportButton" icon="sap-icon://download" tooltip="Export to Excel" />
+        </contentRight>
+      </Bar>
+    </customHeader>
+		<content>
+		    <FacetFilter
+		        id="idFilterSkillView"
+				type="Light"
+				showPersonalization="true"
+				showReset="true"
+				reset="handleFacetFilterReset" >
+  				<lists>
+  					<FacetFilterList
+  						title="PROFICIENCY"
+  						multiSelect="true"
+  						listClose="handleListClose"
+  						items="{filter>/Proficiency}" >
+  	 					<items>
+  	 						<FacetFilterItem text="{filter>text}" />  	 						
+  	 					</items>  			 					
+  					</FacetFilterList>
+  					<FacetFilterList
+  					    id="idFilterLocation"
+  						title="LOCATION"
+  						multiSelect="true"
+  						listClose="handleListClose"
+  						items="{filter>/Location}" >
+  	 					<items>
+  	 						<FacetFilterItem text="{filter>text}" />  	 						
+  	 					</items>  			 					
+  					</FacetFilterList>
+  					<FacetFilterList
+  						title="LEVEL"
+  						multiSelect="true"
+  						listClose="handleListClose"
+  						items="{filter>/Level}" >
+  	 					<items>
+  	 						<FacetFilterItem text="{filter>text}" />  	 						
+  	 					</items>  			 					
+  					</FacetFilterList>
+  					<FacetFilterList
+  						title="SPECIALTY"
+  						multiSelect="true"
+  						listClose="handleListClose"
+  						items="{filter>/Specialty}" >
+  	 					<items>
+  	 						<FacetFilterItem text="{filter>text}" />  	 						
+  	 					</items>  			 					
+  					</FacetFilterList>
+  				</lists>		
+			</FacetFilter>
+			<l:VerticalLayout class="sapUiSmallMargin">
+				<l:content>
+					<Label text="{/results/0/NAME}" class="nameHeaderOneSkill" />
+					<Text text="{/results/0/DESCRIPTION}" class="descriptionHeaderOneSkill" />
+					<HBox class="marketNeedOneSkill" justifyContent="End" alignItems="Start">
+						<Label text="Market need: " />
+						<Text text="{/results/0/NEED}" />
+					</HBox>
+				</l:content>
+			</l:VerticalLayout>
+			<List
+				id="peopleWithSkillList"
+				items="{users>/results}"
+				headerText="People">
+				<CustomListItem>
+		            <HBox>
+		                <Image
+		                     width="100px"
+		                     densityAware="false"
+		                     press="goToProfile"
+		                     src="{ path: 'users>Person/ID_PERSON',
+		                            formatter: '.photoPath'}" />
+		                <VBox class="sapUiSmallMargin">
+		                    <layoutData>
+		                        <FlexItemData growFactor="2" />
+		                    </layoutData>
+		                    <Link text="{users>Person/NAME} {users>Person/SURNAME}" class="peopleNameSkill" press="goToProfile" />
+		                    <RatingIndicator
+		                        id="proficiencySkill"
+		                        maxValue="5"
+		                        value="{ path:'users>PROFICIENCY',
+		                                 type: 'sap.ui.model.type.String' }"
+		                        tooltip="Proficiency"
+		                        iconSelected="sap-icon://study-leave"
+		                        iconHovered="sap-icon://study-leave"
+		                        iconUnselected="sap-icon://study-leave"
+		                        enabled="false" />
+		                </VBox>
+		                <VBox justifyContent="End" class="sapUiSmallMarginEnd">
+		                    <Label text="{users>Person/LEVEL}" textAlign="End" width="100%" class="additionalInfoOne" />
+		                    <Label text="{users>Person/SPECIALTY}" textAlign="End" width="100%" class="additionalInfoOne" />
+		                    <Label text="{users>Person/LOCATION}" textAlign="End" width="100%" class="additionalInfoOne" />
+		                </VBox>
+		            </HBox>
+				</CustomListItem>	
+			</List>
+		</content>
+	</Page>
+</mvc:View>

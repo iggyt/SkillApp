@@ -1,0 +1,3 @@
+service namespace "skillview" {
+	"SKILL_VIEW"."Z_SKILL" as "Skills"; 
+}

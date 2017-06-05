@@ -1,0 +1,35 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:un="sap.ui.unified" xmlns:c="sap.ui.commons"
+		controllerName="controller.StartView" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Page title="Skill View App">
+		<content>
+		    <FlexBox alignItems="Center" jusifyContent="Center" class="startPage">
+		        <items>
+            		<c:Button 
+            			text="Profile"
+            			class="startButton profile"
+            			styled="false"
+            			app:navigation="idProfileView"
+            			press="goTo" />
+            	    <c:Button 
+            			text="People"
+            			class="startButton people"
+            			styled="false"
+            			app:navigation="idPeopleView"
+            			press="goTo" />
+            		<c:Button 
+            			text="Skills"
+            			class="startButton skills"
+            			styled="false"
+            			app:navigation="idSkillsView"
+            			press="goTo" />
+            		<c:Button	
+            			text="Reporting"
+            			class="startButton reporting"
+            			styled="false"
+            			app:navigation="idReportingView"
+            			press="goTo" />
+        		</items>
+        	</FlexBox>
+		</content>	
+	</Page>
+</mvc:View>
